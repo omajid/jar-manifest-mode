@@ -1,10 +1,14 @@
 Asdf: Foo
 Manifest-Version: 2.3
+Implementation-Version: foo
 asdf: asdf
 header: part-line,
  continuation
 aa: bb
 aaaaasd
+Foo: Manifest-Version
+ Implementation-Version
+Bar: Implementation-Version
 aaaa
 test foo
 test bar

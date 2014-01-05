@@ -43,22 +43,24 @@
    "\\(" jar-manifest-header-value-regexp "\\)"))
 
 ;; TODO make this more comprehensive
-(defconst jar-manifest-known-headers-regexp
-  (regexp-opt
-   (list "Manifest-Version" "Created-By" "Signature-Version" "Class-Path"
-	 "Main-Class"
-	 "Extension-List"
-	 "Extension-Name"
-	 "Implementation-Title" "Implementation-Version" "Implementation-Vendor" "Implementation-Vendor-Id" "Implementation-URL"
-	 "Specification-Title" "Specification-Version" "Specification-Vendor"
-	 "Sealed"
-	 "Content-Type"
-	 "Java-Bean"
-	 "Magic")))
+(defconst jar-manifest-known-header-names-regexp
+  (concat
+   "^"
+   (regexp-opt
+    (list "Manifest-Version" "Created-By" "Signature-Version" "Class-Path"
+	  "Main-Class"
+	  "Extension-List"
+	  "Extension-Name"
+	  "Implementation-Title" "Implementation-Version" "Implementation-Vendor" "Implementation-Vendor-Id" "Implementation-URL"
+	  "Specification-Title" "Specification-Version" "Specification-Vendor"
+	  "Sealed"
+	  "Content-Type"
+	  "Java-Bean"
+	  "Magic"))))
 
 (defconst jar-manifest-font-lock-keywords
   (list
-   (cons jar-manifest-known-headers-regexp 'font-lock-keyword-face)
+   (cons jar-manifest-known-header-names-regexp 'font-lock-keyword-face)
    (list jar-manifest-header-regexp '(1 font-lock-type-face) '(2 font-lock-string-face)))
   "Expressions to highlight in jar-manifest-mode.")
 
