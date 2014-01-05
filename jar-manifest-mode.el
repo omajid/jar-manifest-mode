@@ -24,17 +24,30 @@
 ;;; Commentary:
 
 ;; TODO
-;; - Multiline values
 ;; - Deal with x-Digest-y and x-Extension-* style attributes
 ;; - Highlight non-conforming entries as an error
 
 ;;; Code:
 
+(defun jar-manifest-font-lock-extend-region ()
+  "Extend the search region to contain an entire jar header."
+  ; font-lock-beg/end are dynamically bound, define them to remove warnings
+  (eval-when-compile (defvar font-lock-beg) (defvar font-lock-end))
+  (save-excursion
+    (goto-char font-lock-beg)
+    (let ((beg (or (re-search-backward "^[^ ]" nil t)
+		   (point-min))))
+      (goto-char font-lock-end)
+      (when (re-search-forward "^[^ ]" nil t)
+	(beginning-of-line)
+	(setq font-lock-end (point)))
+      (setq font-lock-beg beg))))
+
 ; FIXME the second should be [:alpha:]
 (defconst jar-manifest-header-name-regexp "^[a-zA-Z0-9]\\(?:[a-zA-Z0-9]\\|_\\|-\\)*"
   "Regexp matching a header name.")
 
-(defconst jar-manifest-header-value-regexp " .*$"
+(defconst jar-manifest-header-value-regexp " .*\n\\( .*\n\\)*"
   "Regexp matching a header value.")
 
 (defconst jar-manifest-header-regexp
@@ -69,7 +82,11 @@
   "Major mode for editing JAR Manifest (Manifest.mf) files."
 
   ;; syntax highlighting
-  (setq-local font-lock-defaults '(jar-manifest-font-lock-keywords)))
+  (setq-local font-lock-defaults '(jar-manifest-font-lock-keywords))
+  ;; syntax extends across lines, so work across lines
+  (setq-local font-lock-multiline t)
+  ;; buffer-local hook to extend regions used for syntax processing
+  (add-hook 'font-lock-extend-region-functions 'jar-manifest-font-lock-extend-region nil t))
 
 
 ;;;###autoload
