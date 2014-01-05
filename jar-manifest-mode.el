@@ -26,7 +26,6 @@
 ;; TODO
 ;; - Multiline values
 ;; - Deal with x-Digest-y and x-Extension-* style attributes
-;; - Highlight well-known headers differently
 ;; - Highlight non-conforming entries as an error
 
 ;;; Code:
@@ -59,6 +58,7 @@
 
 (defconst jar-manifest-font-lock-keywords
   (list
+   (cons jar-manifest-known-headers-regexp 'font-lock-keyword-face)
    (list jar-manifest-header-regexp '(1 font-lock-type-face) '(2 font-lock-string-face)))
   "Expressions to highlight in jar-manifest-mode.")
 
