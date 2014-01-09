@@ -61,6 +61,8 @@
    "^"
    (regexp-opt
     (list "Manifest-Version" "Created-By" "Signature-Version" "Class-Path"
+	  "Permissions" "Codebase" "Application-Name" "Application-Library-Allowable-Codebase" "Caller-Allowable-Codebase"
+	  "Trusted-Only" "Trusted-Library"
 	  "Main-Class"
 	  "Extension-List"
 	  "Extension-Name"
