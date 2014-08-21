@@ -10,9 +10,9 @@ Installation
 
 Just add it to your `load-path` and then `require` it.
 
-I use something like this
+I use something like this:
 
-    (require jar-manifest-mode "/path/to/jar-manifest-mode.el")
+    (require 'jar-manifest-mode "/path/to/jar-manifest-mode.el")
 
 Copyright
 ---------
