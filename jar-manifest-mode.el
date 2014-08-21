@@ -101,7 +101,7 @@
 
 
 ;;;###autoload
-(add-to-list 'auto-mode-alist '("manifest\\.mf\\'" . jar-manifest-mode))
+(add-to-list 'auto-mode-alist '("[Mm][Aa][Na][Ii][Ff][Ee][Ss][Tt]\\.[Mm][Ff]\\'" . jar-manifest-mode))
 
 (provide 'jar-manifest-mode)
 ;;; jar-manifest-mode.el ends here
