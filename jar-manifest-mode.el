@@ -72,7 +72,7 @@
         "Specification-Title" "Specification-Version" "Specification-Vendor"
         "Sealed"
         "Content-Type"
-        "Premain-Class" "Agent-Class"
+        "Premain-Class" "Agent-Class" "Boot-Class-Path" "Can-Redefine-Classes" "Can-Retransform-Classes" "Can-Set-Native-Method-Prefix"
         "Java-Bean"
         "Magic"))
 
