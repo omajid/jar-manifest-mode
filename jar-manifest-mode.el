@@ -55,24 +55,26 @@
    "\\(" jar-manifest-header-name-regexp "\\):"
    "\\(" jar-manifest-header-value-regexp "\\)"))
 
+(defconst jar-manifest-well-known-header-names
+  (list "Manifest-Version" "Created-By" "Signature-Version" "Class-Path"
+        "Permissions" "Codebase" "Application-Name" "Application-Library-Allowable-Codebase" "Caller-Allowable-Codebase"
+        "Trusted-Only" "Trusted-Library"
+        "Main-Class"
+        "Extension-List"
+        "Extension-Name"
+        "Implementation-Title" "Implementation-Version" "Implementation-Vendor" "Implementation-Vendor-Id" "Implementation-URL"
+        "Specification-Title" "Specification-Version" "Specification-Vendor"
+        "Sealed"
+        "Content-Type"
+        "Premain-Class" "Agent-Class"
+        "Java-Bean"
+        "Magic"))
+
 ;; TODO make this more comprehensive
 (defconst jar-manifest-known-header-names-regexp
   (concat
    "^"
-   (regexp-opt
-    (list "Manifest-Version" "Created-By" "Signature-Version" "Class-Path"
-	  "Permissions" "Codebase" "Application-Name" "Application-Library-Allowable-Codebase" "Caller-Allowable-Codebase"
-	  "Trusted-Only" "Trusted-Library"
-	  "Main-Class"
-	  "Extension-List"
-	  "Extension-Name"
-	  "Implementation-Title" "Implementation-Version" "Implementation-Vendor" "Implementation-Vendor-Id" "Implementation-URL"
-	  "Specification-Title" "Specification-Version" "Specification-Vendor"
-	  "Sealed"
-	  "Content-Type"
-	  "Premain-Class" "Agent-Class"
-	  "Java-Bean"
-	  "Magic"))))
+   (regexp-opt jar-manifest-well-known-header-names)))
 
 (defconst jar-manifest-font-lock-keywords
   (list
