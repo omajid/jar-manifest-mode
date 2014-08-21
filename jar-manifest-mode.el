@@ -2,10 +2,12 @@
 
 ;;; Copyright (C) 2014 Omair Majid
 
-;; Version: 0.0.1
 ;; Author: Omair Majid <omair.majid@gmail.com>
 ;; URL: http://github.com/omajid/jar-manifest-mode
+;; Version: 0.0.1
 ;; Keywords: convenience languages
+
+;; This file is NOT part of GNU Emacs.
 
 ;; This program is free software: you can redistribute it and/or
 ;; modify it under the terms of the GNU General Public License as
@@ -22,6 +24,10 @@
 ;; <http://www.gnu.org/licenses/>.
 
 ;;; Commentary:
+
+;; This package provides support for working with jar file manifests
+;; (normally named 'manifest.mf' or 'MANIFEST.MF').  It provides basic
+;; syntax checking and keyword highlighting.
 
 ;; TODO
 ;; - Deal with x-Digest-y and x-Extension-* style attributes
