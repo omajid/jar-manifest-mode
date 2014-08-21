@@ -70,6 +70,7 @@
 	  "Specification-Title" "Specification-Version" "Specification-Vendor"
 	  "Sealed"
 	  "Content-Type"
+	  "Premain-Class" "Agent-Class"
 	  "Java-Bean"
 	  "Magic"))))
 
