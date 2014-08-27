@@ -49,7 +49,6 @@
 	(setq font-lock-end (point)))
       (setq font-lock-beg beg))))
 
-; FIXME the second should be [:alpha:]
 (defconst jar-manifest-header-name-regexp "^[a-zA-Z0-9]\\(?:[a-zA-Z0-9]\\|_\\|-\\)*"
   "Regexp matching a header name.")
 

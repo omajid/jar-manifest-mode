@@ -1,6 +1,8 @@
 Asdf: Foo
 Manifest-Version: 2.3
 Implementation-Version: foo
+0a-d: ShouldbeHighlighted
+-f0: ThisShouldNotBeHighlighted
 asdf: asdf
 header: part-line,
  continuation
