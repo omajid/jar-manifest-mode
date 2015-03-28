@@ -87,14 +87,17 @@
    (list jar-manifest-header-regexp '(1 font-lock-type-face) '(2 font-lock-string-face)))
   "Expressions to highlight in jar-manifest-mode.")
 
+(defalias 'jar-manifest-parent-mode
+  (if (fboundp 'prog-mode) 'prog-mode 'fundamental-mode))
+
 ;;;###autoload
-(define-derived-mode jar-manifest-mode prog-mode "Manifest"
+(define-derived-mode jar-manifest-mode jar-manifest-parent-mode "Manifest"
   "Major mode for editing JAR Manifest (Manifest.mf) files."
 
   ;; syntax highlighting
-  (setq-local font-lock-defaults '(jar-manifest-font-lock-keywords))
+  (setq font-lock-defaults '(jar-manifest-font-lock-keywords))
   ;; syntax extends across lines, so work across lines
-  (setq-local font-lock-multiline t)
+  (set (make-local-variable 'font-lock-multiline) t)
   ;; buffer-local hook to extend regions used for syntax processing
   (add-hook 'font-lock-extend-region-functions 'jar-manifest-font-lock-extend-region nil t))
 
