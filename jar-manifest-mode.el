@@ -1,4 +1,4 @@
-;;; jar-manifest-mode.el -- Major mode to edit JAR manifest files
+;;; jar-manifest-mode.el --- Major mode to edit JAR manifest files
 
 ;;; Copyright (C) 2014 Omair Majid
 
