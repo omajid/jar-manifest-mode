@@ -98,6 +98,7 @@
   (setq font-lock-defaults '(jar-manifest-font-lock-keywords))
   ;; syntax extends across lines, so work across lines
   (set (make-local-variable 'font-lock-multiline) t)
+  (setq-local font-lock-multiline t)
   ;; buffer-local hook to extend regions used for syntax processing
   (add-hook 'font-lock-extend-region-functions 'jar-manifest-font-lock-extend-region nil t))
 
