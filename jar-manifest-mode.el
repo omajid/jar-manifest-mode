@@ -37,7 +37,7 @@
 
 (defun jar-manifest-font-lock-extend-region ()
   "Extend the search region to contain an entire jar header."
-  ; font-lock-beg/end are dynamically bound, define them to remove warnings
+  ;; font-lock-beg/end are dynamically bound, define them to remove warnings
   (eval-when-compile (defvar font-lock-beg) (defvar font-lock-end))
   (save-excursion
     (goto-char font-lock-beg)
