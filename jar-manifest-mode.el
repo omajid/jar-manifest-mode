@@ -79,7 +79,7 @@
 (defconst jar-manifest-known-header-names-regexp
   (concat
    "^"
-   (regexp-opt jar-manifest-well-known-header-names)))
+   (regexp-opt jar-manifest-well-known-header-names 'symbols)))
 
 (defconst jar-manifest-font-lock-keywords
   (list

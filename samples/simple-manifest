@@ -1,5 +1,6 @@
 Asdf: Foo
 Manifest-Version: 2.3
+Manifest-VersionF: 1
 Implementation-Version: foo
 0a-d: ShouldbeHighlighted
 -f0: ThisShouldNotBeHighlighted
